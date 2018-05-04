@@ -1,0 +1,29 @@
+{
+  "name": "pregen-stash",
+  "version": "0.0.0",
+  "description": "stash that serves pregenerated values",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiefbiiko/pregen-stash.git"
+  },
+  "keywords": [
+    "pregen",
+    "pregenerated",
+    "stash",
+    "out-of-bounds"
+  ],
+  "author": "Noah Anabiik Schwarz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chiefbiiko/pregen-stash/issues"
+  },
+  "homepage": "https://github.com/chiefbiiko/pregen-stash#readme",
+  "devDependencies": {
+    "tape": "^4.9.0"
+  },
+  "dependencies": {}
+}
