@@ -4,7 +4,7 @@
 
 ***
 
-Stash data structure that serves you with pregenerated values from your custom computation-intensive function. Getting those pregenerated values then boils down to a cheap `Array.prototype.pop`.
+FIFO data structure that serves you with pregenerated values from your custom computation-intensive function. Getting those pregenerated values then boils down to a cheap `Array.prototype.pop`.
 
 ***
 
@@ -36,7 +36,11 @@ console.log('end size:', stash.size)
 
 ### `var stash = new Stash(size, gen)`
 
-Create a new `Stash` instance. `size` indicates the number of items that should be kept readily available at any time. `gen` must be a function. Its return values will be used to reup the `stash`.
+Create a new `Stash` instance. `size` indicates the number of items that should be kept readily available at any time. `gen` must be a function. Its return values will be used to reup the `stash`. `gen` should have arity 0.
+
+### `stash.on('ready', onready)`
+
+Emitted once `stash` has been filled with `size` items after initialization.
 
 ### `var item = stash.pop()`
 
