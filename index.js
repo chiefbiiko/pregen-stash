@@ -1,8 +1,6 @@
 var { inherits } = require('util')
 var { EventEmitter } = require('events')
 
-function noop () {}
-
 function Stash (size, gen, onready) {
   if (!(this instanceof Stash)) return new Stash(size, gen, onready)
   EventEmitter.call(this)

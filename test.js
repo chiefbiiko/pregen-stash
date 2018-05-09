@@ -12,14 +12,11 @@ tape.skip('throws', function (t) {
 })
 
 tape('stash', function (t) {
-  // t.plan(1)
   var size = 5
-  var stash = stashBox(size, Math.random)
+  var stash = stashBox(size, Math.random, onready)
   function onready () {
-    console.log('::ready::')
-    for (var instantItem, i = 0; i < 4; i++) instantItem = stash.pop()
-    t.is(stash.size, size, 'got back to size')
+    for (var instantItem, i = 0; i < 4; i++) instantItem = this.pop()
+    t.is(this.size, size, 'got back to size')
     t.end()
   }
-  stash.on('ready', onready)
 })
