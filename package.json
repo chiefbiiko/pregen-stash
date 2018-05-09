@@ -1,6 +1,6 @@
 {
   "name": "pregen-stash",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "description": "stash that serves pregenerated values",
   "main": "index.js",
   "scripts": {

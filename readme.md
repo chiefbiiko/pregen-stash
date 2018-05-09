@@ -19,32 +19,26 @@ npm install --save pregen-stash
 ## Usage
 
 ``` js
-var stashBox = require('pregen-stash')
+const createStash = require('pregen-stash')
 
-var stash = stashBox(5, Math.random)
-
-console.log('start size:', stash.size)
-
-for (var i = 0; i < 13; i++) console.log('just popd:', stash.pop())
-
-console.log('end size:', stash.size)
+createStash(5, Math.random)
+  .then(stash => {
+    for (var i = 0; i < 13; i++) console.log(stash.pop(), stash.size)
+  })
+  .catch(console.error)
 ```
 
 ***
 
 ## API
 
-### `var stash = new Stash(size, gen)`
+### `createStash(size, gen)`
 
-Create a new `Stash` instance. `size` indicates the number of items that should be kept readily available at any time. `gen` must be a function. Its return values will be used to reup the `stash`. `gen` should have arity 0.
+Create a new `Stash` instance. `size` indicates the number of items that should be kept readily available at any time. `gen` must be a function. Its return values will be used to reup the `stash`. `gen` must have arity 0. `createStash` returns a `Promise` that resolves to the `Stash` instance.
 
-### `stash.on('ready', onready)`
+### `stash.pop()`
 
-Emitted once `stash` has been filled with `size` items after initialization.
-
-### `var item = stash.pop()`
-
-Retrieve the next item from `stash` in FIFO fashion.
+Retrieve the next item from your `stash` in FIFO fashion.
 
 ***
 
