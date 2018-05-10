@@ -34,11 +34,15 @@ createStash(5, Math.random)
 
 ### `createStash(size, gen)`
 
-Create a new `Stash` instance. `size` indicates the number of items that should be kept readily available at any time. `gen` must be a function. Its return values will be used to reup the `stash`. `gen` must have arity 0. `createStash` returns a `Promise` that resolves to the `Stash` instance.
+Create a new `Stash` instance. `size` indicates the number of items that should be kept readily available at any time. `gen` must be a function. Its return values will be used to reup the stash. `gen` must have arity 0. `createStash` returns a `Promise` that resolves to a `Stash` instance.
 
 ### `stash.pop()`
 
-Retrieve the next item from your `stash` in FIFO fashion.
+Retrieve the next item from your stash in FIFO fashion.
+
+### `stash.size`
+
+Get the number of items in the stash.
 
 ***
 
